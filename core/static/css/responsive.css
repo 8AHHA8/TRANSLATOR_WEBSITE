@@ -1,0 +1,17 @@
+@media (max-width: 991.98px) {
+  .display-3 { font-size: 2.8rem; }
+  .offer-card { border-radius: 24px; }
+  .offer-card-dynamic { border-radius: 20px; }
+  .lava-blob { filter: blur(20px); } 
+  .offer-section, #dust-container { border-radius: 40px 40px 0 0; } 
+  .lava-container { padding-bottom: 80px !important; }
+}
+
+@media (max-width: 575.98px) {
+  .hero-title { font-size: 2.2rem; }
+  .fs-4 { font-size: 1.1rem !important; }
+  .p-5 { padding: 2rem !important; }
+  .display-5 { font-size: 2rem; }
+  .offer-section { margin-top: -40px; border-radius: 30px 30px 0 0; }
+  #dust-container { border-radius: 30px 30px 0 0; }
+}

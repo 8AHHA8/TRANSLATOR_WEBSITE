@@ -1,0 +1,41 @@
+.icon-pulse {
+  display: inline-block;
+  transition: all 0.4s ease;
+}
+
+.offer-card-dynamic:hover .icon-pulse {
+  color: #fef3c7 !important;
+  filter: drop-shadow(0 0 10px rgba(234, 88, 12, 0.8));
+  transform: scale(1.1);
+}
+
+.link-hover {
+  position: relative;
+  display: inline-block;
+}
+
+.link-hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, #f59e0b, #ea580c);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.link-hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}

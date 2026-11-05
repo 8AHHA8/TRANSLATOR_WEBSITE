@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+{% block title %}{{ page.title }} — Business Card{% endblock %}
+
+{% block content %}
+<article class="py-5 mt-5">
+  <div class="container py-4">
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'core:index' %}" class="text-decoration-none text-primary">Home</a></li>
+        <li class="breadcrumb-item active text-secondary" aria-current="page">{{ page.title }}</li>
+      </ol>
+    </nav>
+    
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="bento-card p-4 p-md-5">
+          <h1 class="display-5 fw-bold mb-4 text-light">{{ page.title }}</h1>
+          <div class="content text-secondary lh-lg">
+            {{ page.content|safe }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+{% endblock %}

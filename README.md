@@ -1,21 +1,36 @@
 # Translator Website
 
-A modern, responsive, single-page business card website for a certified German translator. The project is built with Django and features a distinctive dark design, animated Lava Lamp background, and dynamic content management.
+A modern, responsive, single-page business card website for a certified German translator. The project is built with Django and features a distinctive dark design, animated backgrounds (Lava Lamp, floating dust particles, and deep sea waves), interactive UI elements, and dynamic content management.
 
 ## Tech Stack
 
 - **Backend:** Python 3, Django 5.x
 - **Frontend:** HTML5, CSS3, Bootstrap 5
-- **Animations:** AOS (Animate On Scroll)
+- **Animations:** AOS (Animate On Scroll), custom JavaScript animations, and CSS Keyframes
 - **Database:** SQLite
-- **Design:** Dark theme with a dynamic Lava Lamp animated background
+- **Design:** Dark theme with dynamic, multi-layered animated backgrounds
 
 ## Features
 
 - Fully responsive design (desktop, tablet, and mobile).
-- Dynamic Lava Lamp background with randomly generated animated shapes.
-- Smooth scrolling and scroll-triggered animations.
-- Interactive hover effects and modern UI elements.
+
+- **Three Distinct Animated Sections:**
+  - **Hero:** Dynamic Lava Lamp background with randomly generated, morphing shapes.
+  - **Offer:** Floating dust particles and glowing sparks rising upwards.
+  - **Location:** Deep sea-inspired, Aurora-like glowing waves in the background.
+
+- **Interactive UI Elements:**
+  - Custom scroll-based zoom animations for the Hero and Offer cards.
+  - Glowing icon effects on card hover.
+  - Smooth scrolling between website sections.
+  - Custom scrollbar styling.
+  - Interactive hover effects and modern UI elements.
+
+- **Google Maps Integration:**
+  - Google Maps embedded in the Location section.
+  - Dark-mode styled map.
+  - Interactive hover lift effect.
+
 - Contact information dynamically retrieved from the database.
 - Django Admin panel for easy content management.
 - Custom HTML templates built with Django Template Language.
@@ -65,7 +80,7 @@ TRANSLATOR_WEBSITE/
 │
 ├── .gitignore
 ├── manage.py
-├── README.
+├── README.md
 └── requirements.txt
 ```
 
@@ -166,7 +181,7 @@ Run the following commands from the project root directory:
 ```bash
 git init
 git add .
-git commit -m "Initial commit: Modern translator website with animated Lava Lamp background"
+git commit -m "Initial commit: Modern translator website with animated backgrounds"
 git branch -M main
 ```
 

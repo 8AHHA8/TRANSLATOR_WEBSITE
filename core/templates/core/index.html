@@ -1,86 +1,74 @@
 {% extends "core/base.html" %}
-{% block title %}Translator Website | Professional Business Card{% endblock %}
+{% block title %}{{ contact.company_name|default:"Anna Kowalska" }} — Business Card{% endblock %}
 
 {% block content %}
-<section class="hero-section lava-container position-relative overflow-hidden pt-5 pb-5">
-  
+<section class="hero-section lava-container position-relative overflow-hidden pt-5 pb-5" id="hero-section">
   <div id="lava-blobs-container" class="position-absolute w-100 h-100 top-0 start-0 z-0"></div>
   
   <div class="container position-relative z-1 py-5">
-    <div class="row g-5 align-items-stretch">
-      
-      <div class="col-lg-8" data-aos="fade-right" data-aos-duration="1200">
-        <div class="offer-card p-5 p-lg-5 h-100 d-flex flex-column justify-content-center">
-          <span class="badge bg-primary bg-opacity-25 text-primary mb-4 px-3 py-2 rounded-pill fw-semibold hover-scale d-inline-block align-self-start border border-primary border-opacity-50">
-            Certified Translator of X
-          </span>
-          <h1 class="hero-title display-3 mb-4 text-main-color">
-            {{ contact.company_name|default:"Lorem Ipsum" }}
-          </h1>
-                    <p class="hero-text lead text-secondary mb-0 pe-lg-5 fs-4">
-            {{ contact.tagline|default:"Dolor sit amet, consectetur adipiscing elit. Fusce non felis enim. Aenean viverra varius ligula, ut condimentum diam varius quis. Sed porttitor varius ante id congue. Suspendisse a egestas tortor. Duis laoreet, diam vel congue consequat." }}
-          </p>
-          </p>
+    <div class="row justify-content-center">
+      <div class="col-lg-12" data-aos="fade-up" data-aos-duration="1200">
+        <div class="offer-card p-4 p-md-5" id="hero-card">
+          <div class="row align-items-center g-5">
+            
+            <div class="col-lg-7">
+              <span class="badge bg-primary bg-opacity-25 text-primary mb-4 px-3 py-2 rounded-pill fw-semibold hover-scale d-inline-block align-self-start border border-primary border-opacity-50">
+                Certified Translator of German
+              </span>
+              <h1 class="hero-title display-3 mb-4 text-main-color">
+                {{ contact.company_name|default:"Anna Kowalska" }}
+              </h1>
+              <p class="hero-text lead text-secondary mb-0 pe-lg-4 fs-5" style="line-height: 1.7;">
+                {{ contact.tagline|default:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non felis enim. Aenean viverra varius ligula, ut condimentum diam varius quis. Sed porttitor varius ante id congue. Suspendisse a egestas tortor. Duis laoreet, diam vel congue consequat, dolor dolor malesuada turpis, eget egestas ex turpis sit amet metus." }}
+              </p>
+            </div>
+
+            <div class="col-lg-5 border-start-lg border-secondary border-opacity-25 ps-lg-5">
+              <h4 class="fw-bold mb-4 pb-3 text-light d-none d-lg-block">Contact</h4>
+              
+              <ul class="list-unstyled mb-0">
+                <li class="d-flex align-items-center mb-4">
+                  <div class="me-3 flex-shrink-0 icon-to-glow" style="width: 60px; height: 60px; background-color: #1c1917 !important; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 5px 10px rgba(0,0,0,0.8); transition: all 0.4s ease;">
+                    <i class="bi bi-telephone-fill fs-4" style="color: #ea580c !important; transition: all 0.4s ease;"></i>
+                  </div>
+                  <div>
+                    <small class="text-secondary d-block text-uppercase fw-semibold" style="font-size: 0.75rem;">Phone</small>
+                    <a href="tel:{{ contact.phone|default:'012345678' }}" class="text-light text-decoration-none fw-bold fs-5 link-hover">{{ contact.phone|default:"012345678" }}</a>
+                  </div>
+                </li>
+
+                <li class="d-flex align-items-center mb-0">
+                  <div class="me-3 flex-shrink-0 icon-to-glow" style="width: 60px; height: 60px; background-color: #1c1917 !important; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 5px 10px rgba(0,0,0,0.8); transition: all 0.4s ease;">
+                    <i class="bi bi-envelope-fill fs-4" style="color: #ea580c !important; transition: all 0.4s ease;"></i>
+                  </div>
+                  <div>
+                    <small class="text-secondary d-block text-uppercase fw-semibold" style="font-size: 0.75rem;">E-mail</small>
+                    <a href="mailto:{{ contact.email|default:'email@op.pl' }}" class="text-light text-decoration-none fw-bold fs-5 link-hover">{{ contact.email|default:"email@op.pl" }}</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
         </div>
       </div>
-
-      <div class="col-lg-4" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
-        <div class="offer-card p-5 h-100 d-flex flex-column">
-          <h4 class="fw-bold mb-4 border-bottom border-secondary border-opacity-25 pb-3 text-light">Contact</h4>
-          
-          <ul class="list-unstyled mb-0 flex-grow-1 d-flex flex-column justify-content-center">
-            <li class="d-flex align-items-center mb-4">
-              <div class="icon-box-sm bg-primary bg-opacity-25 text-primary rounded-circle me-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 48px; height: 48px;">
-                <i class="bi bi-telephone-fill fs-5"></i>
-              </div>
-              <div>
-                <small class="text-secondary d-block text-uppercase fw-semibold" style="font-size: 0.75rem;">Phone</small>
-                <a href="tel:{{ contact.phone|default:'012345678' }}" class="text-light text-decoration-none fw-bold fs-5 link-hover">{{ contact.phone|default:"012345678" }}</a>
-              </div>
-            </li>
-
-            <li class="d-flex align-items-center mb-4">
-              <div class="icon-box-sm bg-primary bg-opacity-25 text-primary rounded-circle me-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 48px; height: 48px;">
-                <i class="bi bi-envelope-fill fs-5"></i>
-              </div>
-              <div>
-                <small class="text-secondary d-block text-uppercase fw-semibold" style="font-size: 0.75rem;">E-mail</small>
-                <a href="mailto:{{ contact.email|default:'email@op.pl' }}" class="text-light text-decoration-none fw-bold fs-5 link-hover">{{ contact.email|default:"email@op.pl" }}</a>
-              </div>
-            </li>
-
-            <li class="d-flex align-items-center mb-0">
-              <div class="icon-box-sm bg-primary bg-opacity-25 text-primary rounded-circle me-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 48px; height: 48px;">
-                <i class="bi bi-geo-alt-fill fs-5"></i>
-              </div>
-              <div>
-                <small class="text-secondary d-block text-uppercase fw-semibold" style="font-size: 0.75rem;">Address</small>
-                <span class="text-light fw-bold fs-6 d-block">{{ contact.address|default:"ul. Lorem, Ipsum 1, 12-345" }}</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
     </div>
   </div>
 </section>
 
-<section id="uslugi" class="py-5 position-relative offer-section overflow-hidden">
+<section id="uslugi" class="py-5 position-relative offer-section overflow-hidden" id="offer-section">
   <div id="dust-container" class="position-absolute w-100 h-100 top-0 start-0 z-0 pointer-events-none"></div>
-  
   <div class="container position-relative z-1 py-5">
     <div class="text-center mb-5" data-aos="zoom-in" data-aos-duration="1000">
       <h2 class="display-4 fw-bold text-main-color mb-3">My Offer</h2>
       <p class="text-secondary fs-5 max-w-600 mx-auto">Comprehensive translation support tailored to your needs.</p>
     </div>
-    
     <div class="row g-4 justify-content-center">
       {% for s in services %}
         <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="{{ forloop.counter0|add:'150' }}" data-aos-duration="800">
-          <div class="offer-card-dynamic h-100 p-5 text-center position-relative">
-            <div class="icon-wrapper mb-4 mx-auto">
-              <i class="bi {{ s.icon }} display-5 text-primary icon-pulse"></i>
+          <div class="offer-card-dynamic h-100 p-5 text-center position-relative dynamic-card">
+            <div class="mb-4 mx-auto icon-to-glow" style="width: 80px; height: 80px; background-color: #1c1917 !important; border-radius: 24px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 5px 10px rgba(0,0,0,0.8); transition: all 0.4s ease;">
+              <i class="bi {{ s.icon }} display-5" style="color: #ea580c !important; transition: all 0.4s ease;"></i>
             </div>
             <h5 class="card-title fw-bold mb-3 text-light fs-4">{{ s.title }}</h5>
             <p class="card-text text-secondary mb-0">{{ s.description }}</p>
@@ -88,15 +76,19 @@
         </div>
       {% empty %}
         <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="150" data-aos-duration="800">
-          <div class="offer-card-dynamic h-100 p-5 text-center position-relative">
-            <div class="icon-wrapper mb-4 mx-auto"><i class="bi bi-file-earmark-text display-5 text-primary icon-pulse"></i></div>
+          <div class="offer-card-dynamic h-100 p-5 text-center position-relative dynamic-card">
+            <div class="mb-4 mx-auto icon-to-glow" style="width: 80px; height: 80px; background-color: #1c1917 !important; border-radius: 24px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 5px 10px rgba(0,0,0,0.8); transition: all 0.4s ease;">
+              <i class="bi bi-file-earmark-text display-5" style="color: #ea580c !important; transition: all 0.4s ease;"></i>
+            </div>
             <h5 class="card-title fw-bold mb-3 text-light fs-4">Certified Translations</h5>
-            <p class="card-text text-secondary mb-0">Translations of documents from X to Y and vice versa.</p>
+            <p class="card-text text-secondary mb-0">Translations of documents from German to Polish and vice versa.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="800">
-          <div class="offer-card-dynamic h-100 p-5 text-center position-relative">
-            <div class="icon-wrapper mb-4 mx-auto"><i class="bi bi-translate display-5 text-primary icon-pulse"></i></div>
+          <div class="offer-card-dynamic h-100 p-5 text-center position-relative dynamic-card">
+            <div class="mb-4 mx-auto icon-to-glow" style="width: 80px; height: 80px; background-color: #1c1917 !important; border-radius: 24px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 5px 10px rgba(0,0,0,0.8); transition: all 0.4s ease;">
+              <i class="bi bi-translate display-5" style="color: #ea580c !important; transition: all 0.4s ease;"></i>
+            </div>
             <h5 class="card-title fw-bold mb-3 text-light fs-4">Standard Translations</h5>
             <p class="card-text text-secondary mb-0">Oral and written translations, business correspondence.</p>
           </div>
@@ -106,69 +98,190 @@
   </div>
 </section>
 
+<section id="location" class="py-5 position-relative location-section overflow-hidden">
+  <div id="water-container" class="position-absolute w-100 h-100 top-0 start-0 z-0 pointer-events-none"></div>
+
+  <div class="container position-relative z-1 py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5" data-aos="fade-right" data-aos-duration="1000">
+        <div class="offer-card p-5" id="location-card">
+          <h2 class="display-5 fw-bold text-main-color mb-4">Find Me</h2>
+          <p class="text-secondary mb-4">Visit my office for a direct consultation. I am located in the heart of the city.</p>
+          
+          <ul class="list-unstyled mb-0">
+            <li class="d-flex align-items-center mb-4">
+              <div class="me-3 flex-shrink-0 icon-to-glow" style="width: 60px; height: 60px; background-color: #1c1917 !important; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 5px 10px rgba(0,0,0,0.8); transition: all 0.4s ease;">
+                <i class="bi bi-geo-alt-fill fs-5" style="color: #ea580c !important; transition: all 0.4s ease;"></i>
+              </div>
+              <div>
+                <h6 class="text-light fw-bold mb-1">Address</h6>
+                <span class="text-secondary">{{ contact.address|default:"ul. Uliczna, Małe Miasto 1, 12-345" }}</span>
+              </div>
+            </li>
+            <li class="d-flex align-items-center mb-4">
+              <div class="me-3 flex-shrink-0 icon-to-glow" style="width: 60px; height: 60px; background-color: #1c1917 !important; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 5px 10px rgba(0,0,0,0.8); transition: all 0.4s ease;">
+                <i class="bi bi-clock-fill fs-5" style="color: #ea580c !important; transition: all 0.4s ease;"></i>
+              </div>
+              <div>
+                <h6 class="text-light fw-bold mb-1">Opening Hours</h6>
+                <span class="text-secondary">{{ contact.opening_hours|default:"Mon-Fri: 9:00 AM - 5:00 PM" }}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+        <div class="map-wrapper shadow-lg rounded-4 overflow-hidden border border-secondary border-opacity-25">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10244.85651800722!2d21.996654478848463!3d50.04140374463825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfb1b2c9a1f6f%3A0x6b3f8c8f1c6b8c6b!2sRzesz%C3%B3w!5e0!3m2!1sen!2spl!4v1620000000000!5m2!1sen!2spl" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="custom-map">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <script>
+
+const allCards = document.querySelectorAll('.offer-card, .offer-card-dynamic');
+allCards.forEach(card => {
+    const icons = card.querySelectorAll('.icon-to-glow');
+    const iconInner = card.querySelectorAll('.icon-to-glow i');
+    card.addEventListener('mouseenter', () => {
+        icons.forEach(icon => {
+            icon.style.background = 'linear-gradient(135deg, #f59e0b, #ea580c)';
+            icon.style.boxShadow = '0 0 25px rgba(234, 88, 12, 0.8), inset 0 0 10px rgba(255,255,255,0.4)';
+            icon.style.transform = 'scale(1.1)';
+        });
+        iconInner.forEach(i => {
+            i.style.color = '#ffffff';
+            i.style.filter = 'drop-shadow(0 0 8px rgba(255,255,255,0.8))';
+        });
+    });
+    card.addEventListener('mouseleave', () => {
+        icons.forEach(icon => {
+            icon.style.background = '#1c1917';
+            icon.style.boxShadow = 'inset 0 5px 10px rgba(0,0,0,0.8)';
+            icon.style.transform = 'scale(1)';
+        });
+        iconInner.forEach(i => {
+            i.style.color = '#ea580c';
+            i.style.filter = 'none';
+        });
+    });
+});
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    
+    const hero = document.getElementById('hero-section');
+    if (hero) {
+        const heroScale = 1 + Math.min(scrollY / 2500, 0.05);
+        hero.style.transform = `scale(${heroScale})`;
+        hero.style.opacity = Math.max(1 - scrollY / 1200, 0.6);
+    }
+    
+    const offerCards = document.querySelectorAll('#offer-section .offer-card-dynamic');
+    offerCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const cardCenter = rect.top + rect.height / 2;
+        const screenCenter = windowHeight / 2;
+        const distanceToCenter = Math.abs(cardCenter - screenCenter);
+        const maxScale = 0.08;
+        
+        if (distanceToCenter < windowHeight) {
+            const scale = 1 + (maxScale * (1 - distanceToCenter / windowHeight));
+            card.style.setProperty('--scroll-scale', scale);
+        } else {
+            card.style.setProperty('--scroll-scale', 1);
+        }
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function() {
     const container = document.getElementById('lava-blobs-container');
+    if(!container) return;
     const colors = ['#ea580c', '#f59e0b', '#d97706', '#9a3412', '#c2410c', '#b45309', '#78350f', '#f97316'];
-    
     const numberOfBlobs = Math.floor(Math.random() * 8) + 18; 
-    
     for (let i = 0; i < numberOfBlobs; i++) {
         const blob = document.createElement('div');
         blob.classList.add('lava-blob');
-        
         const size = Math.random() * 25 + 5; 
-        
         const top = Math.random() * 110 - 20;
         const left = Math.random() * 110 - 20;
         const color = colors[Math.floor(Math.random() * colors.length)];
-        
         const duration = Math.random() * 10 + 12;
-        
         const delay = Math.random() * -20;
-        
         const br1 = Math.floor(Math.random() * 60) + 20;
         const br2 = Math.floor(Math.random() * 60) + 20;
         const br3 = Math.floor(Math.random() * 60) + 20;
         const br4 = Math.floor(Math.random() * 60) + 20;
-
         blob.style.width = `${size}vw`;
         blob.style.height = `${size}vw`;
         blob.style.background = color;
         blob.style.top = `${top}%`;
         blob.style.left = `${left}%`;
         blob.style.borderRadius = `${br1}% ${100-br1}% ${br2}% ${100-br2}% / ${br3}% ${100-br3}% ${br4}% ${100-br4}%`;
-        
         blob.style.animation = `
             blobFloat${i % 2 === 0 ? '1' : '2'} ${duration}s infinite alternate ease-in-out ${delay}s,
             blobMorph${i % 3 === 0 ? '1' : (i % 3 === 1 ? '2' : '3')} ${duration * 1.5}s infinite alternate ease-in-out ${delay}s
         `;
-        
         container.appendChild(blob);
     }
 });
 
 document.addEventListener("DOMContentLoaded", function() {
     const dustContainer = document.getElementById('dust-container');
+    if(!dustContainer) return;
     const numberOfDust = 40;
-
     for (let i = 0; i < numberOfDust; i++) {
         const dust = document.createElement('div');
         dust.classList.add('dust-particle');
-        
         dust.style.left = `${Math.random() * 100}%`;
         dust.style.top = `${Math.random() * 100}%`;
-        
         const size = Math.random() * 3 + 1;
         dust.style.width = `${size}px`;
         dust.style.height = `${size}px`;
-        
         const duration = Math.random() * 15 + 10;
         dust.style.animationDuration = `${duration}s`;
         dust.style.animationDelay = `${Math.random() * -20}s`;
         dust.style.opacity = Math.random() * 0.5 + 0.2;
-
         dustContainer.appendChild(dust);
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const waterContainer = document.getElementById('water-container');
+    if(!waterContainer) return;
+    const numberOfWaves = 4;
+    const waveColors = [
+        'rgba(234, 88, 12, 0.15)',
+        'rgba(245, 158, 11, 0.1)',
+        'rgba(159, 18, 57, 0.08)',
+        'rgba(20, 18, 16, 0.4)'
+    ];
+    for (let i = 0; i < numberOfWaves; i++) {
+        const wave = document.createElement('div');
+        wave.classList.add('water-blob');
+        const size = Math.random() * 50 + 40;
+        wave.style.width = `${size}vw`;
+        wave.style.height = `${size}vw`;
+        wave.style.top = `${Math.random() * 100 - 20}%`;
+        wave.style.left = `${Math.random() * 100 - 20}%`;
+        wave.style.background = waveColors[i % waveColors.length];
+        const duration = Math.random() * 15 + 20;
+        const delay = Math.random() * -10;
+        wave.style.animation = `waterFloat${i % 2 === 0 ? '1' : '2'} ${duration}s infinite alternate ease-in-out ${delay}s`;
+        waterContainer.appendChild(wave);
     }
 });
 </script>

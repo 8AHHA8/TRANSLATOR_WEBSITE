@@ -28,22 +28,22 @@
               
               <ul class="list-unstyled mb-0">
                 <li class="d-flex align-items-center mb-4">
-                  <div class="me-3 flex-shrink-0 icon-to-glow" style="width: 60px; height: 60px; background-color: #1c1917 !important; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 5px 10px rgba(0,0,0,0.8); transition: all 0.4s ease;">
-                    <i class="bi bi-telephone-fill fs-4" style="color: #ea580c !important; transition: all 0.4s ease;"></i>
+                  <div class="me-3 flex-shrink-0 icon-to-glow" style="width: 80px; height: 80px; background-color: #1c1917 !important; border-radius: 24px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 5px 10px rgba(0,0,0,0.8); transition: all 0.4s ease;">
+                    <i class="bi bi-telephone-fill fs-2" style="color: #ea580c !important; transition: all 0.4s ease;"></i>
                   </div>
                   <div>
-                    <small class="text-secondary d-block text-uppercase fw-semibold" style="font-size: 0.75rem;">Phone</small>
-                    <a href="tel:{{ contact.phone|default:'012345678' }}" class="text-light text-decoration-none fw-bold fs-5 link-hover">{{ contact.phone|default:"012345678" }}</a>
+                    <small class="text-secondary d-block text-uppercase fw-semibold" style="font-size: 1.25rem;">Phone</small>
+                    <a href="tel:{{ contact.phone|default:'012345678' }}" class="text-light text-decoration-none fw-bold fs-2 link-hover">{{ contact.phone|default:"012345678" }}</a>
                   </div>
                 </li>
 
                 <li class="d-flex align-items-center mb-0">
-                  <div class="me-3 flex-shrink-0 icon-to-glow" style="width: 60px; height: 60px; background-color: #1c1917 !important; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 5px 10px rgba(0,0,0,0.8); transition: all 0.4s ease;">
-                    <i class="bi bi-envelope-fill fs-4" style="color: #ea580c !important; transition: all 0.4s ease;"></i>
+                  <div class="me-3 flex-shrink-0 icon-to-glow" style="width: 80px; height: 80px; background-color: #1c1917 !important; border-radius: 24px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 5px 10px rgba(0,0,0,0.8); transition: all 0.4s ease;">
+                    <i class="bi bi-envelope-fill fs-2" style="color: #ea580c !important; transition: all 0.4s ease;"></i>
                   </div>
                   <div>
-                    <small class="text-secondary d-block text-uppercase fw-semibold" style="font-size: 0.75rem;">E-mail</small>
-                    <a href="mailto:{{ contact.email|default:'email@op.pl' }}" class="text-light text-decoration-none fw-bold fs-5 link-hover">{{ contact.email|default:"email@op.pl" }}</a>
+                    <small class="text-secondary d-block text-uppercase fw-semibold" style="font-size: 1.25rem;">E-mail</small>
+                    <a href="mailto:{{ contact.email|default:'email@op.pl' }}" class="text-light text-decoration-none fw-bold fs-2 link-hover">{{ contact.email|default:"email@op.pl" }}</a>
                   </div>
                 </li>
               </ul>
@@ -134,7 +134,7 @@
       <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
         <div class="map-wrapper shadow-lg rounded-4 overflow-hidden border border-secondary border-opacity-25">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10244.85651800722!2d21.996654478848463!3d50.04140374463825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfb1b2c9a1f6f%3A0x6b3f8c8f1c6b8c6b!2sRzesz%C3%B3w!5e0!3m2!1sen!2spl!4v1620000000000!5m2!1sen!2spl" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10244.85651800722!2d21.996654478848463!3d50.04140374463825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfb1b2c9a1f6f%3A0x6b3f8c8f1c6b8c6b!2sRzesz%C3%B3w!5e1!3m2!1sen!2spl!4v1620000000000!5m2!1sen!2spl" 
             width="100%" 
             height="450" 
             style="border:0;" 
@@ -150,7 +150,6 @@
 </section>
 
 <script>
-
 const allCards = document.querySelectorAll('.offer-card, .offer-card-dynamic');
 allCards.forEach(card => {
     const icons = card.querySelectorAll('.icon-to-glow');
@@ -181,14 +180,12 @@ allCards.forEach(card => {
 
 window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    
     const hero = document.getElementById('hero-section');
     if (hero) {
         const heroScale = 1 + Math.min(scrollY / 2500, 0.05);
         hero.style.transform = `scale(${heroScale})`;
         hero.style.opacity = Math.max(1 - scrollY / 1200, 0.6);
     }
-    
     const offerCards = document.querySelectorAll('#offer-section .offer-card-dynamic');
     offerCards.forEach(card => {
         const rect = card.getBoundingClientRect();
@@ -197,7 +194,6 @@ window.addEventListener('scroll', () => {
         const screenCenter = windowHeight / 2;
         const distanceToCenter = Math.abs(cardCenter - screenCenter);
         const maxScale = 0.08;
-        
         if (distanceToCenter < windowHeight) {
             const scale = 1 + (maxScale * (1 - distanceToCenter / windowHeight));
             card.style.setProperty('--scroll-scale', scale);

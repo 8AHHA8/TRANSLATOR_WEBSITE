@@ -102,7 +102,7 @@
 }
 
 .custom-map {
-  filter: invert(90%) hue-rotate(180deg) contrast(1.2);
+  filter: invert(100%) hue-rotate(180deg) brightness(110%) contrast(90%);
   transition: none !important; 
   transform: translateZ(0);
   backface-visibility: hidden;
